@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
@@ -23,21 +24,25 @@ public class ConsignmentLotApplication {
 		Owner owner = new Owner();
 		owner.setName("Bryan");
 
+		//comment this out and see what happens!
 		owner = ownerService.save(owner);
 
 		VehicleService vehicleService = context.getBean(VehicleService.class);
 
+		List<Owner> owners = new ArrayList<>();
+		owners.add(owner);
+
 		Truck truck = new Truck();
 		truck.set4wd(true);
 		truck.setMake("Dodge");
-		truck.setOwner(owner);
+		truck.setOwners(owners);
 
 		Vehicle v1 = vehicleService.save(truck);
 
 		Car car = new Car();
 		car.setMake("Subaru");
 		car.setType("Crosstrek");
-		car.setOwner(owner);
+		car.setOwners(owners);
 
 		Vehicle v2 =vehicleService.save(car);
 
@@ -49,7 +54,7 @@ public class ConsignmentLotApplication {
 		List<Vehicle> vehicles = vehicleService.findAllVehicles();
 		for(Vehicle vehicle: vehicles) {
 			System.out.println(vehicle.getMake());
-			System.out.println(vehicle.getOwner().getName());
+			System.out.println(vehicle.getOwners());
 		}
 	}
 }

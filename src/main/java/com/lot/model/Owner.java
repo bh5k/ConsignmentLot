@@ -1,9 +1,6 @@
 package com.lot.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,5 +23,11 @@ public class Owner {
     //@OneToMany(mappedBy = "owner")
     //private List<Vehicle> vehicles;
 
+    @ManyToMany
+    @JoinTable(
+        name = "owner_vehicle",
+        joinColumns = @JoinColumn(name = "owner_id"),
+        inverseJoinColumns = @JoinColumn(name = "vehicle_id"))
+    private List<Vehicle> vehicles;
 
 }
