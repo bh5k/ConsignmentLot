@@ -39,17 +39,17 @@ public class ConsignmentLotApplication {
 		car.setType("Crosstrek");
 		car.setOwner(owner);
 
-		Vehicle v2 =vehicleService.save(car);
+		Vehicle v2 = vehicleService.save(car);
 
 		System.out.println(v1.getId());
 		System.out.println(v1.getMake());
 		System.out.println(v2.getId());
 		System.out.println(v2.getMake());
 
-		//List<Vehicle> vehicles = vehicleService.findAllVehicles();
-		//for(Vehicle vehicle: vehicles) {
-		//	System.out.println(vehicle.getMake());
-		//}
+		List<Vehicle> vehicles = vehicleService.findAllVehicles();
+		for(Vehicle vehicle: vehicles) {
+			System.out.println(vehicle.getMake());
+		}
 
 	}
 
