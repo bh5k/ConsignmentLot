@@ -1,9 +1,6 @@
 package com.lot.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,8 +20,8 @@ public class Owner {
 
     private String name;
 
-    //@OneToMany(mappedBy = "owner")
-    //private List<Vehicle> vehicles;
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    private List<Vehicle> vehicles;
 
 
 }
