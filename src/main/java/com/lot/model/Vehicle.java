@@ -20,6 +20,6 @@ public class Vehicle {
 
     private String make;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "vehicles")
     private List<Owner> owners;
 }
