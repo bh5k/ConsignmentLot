@@ -21,8 +21,10 @@ public class Owner {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "owner")
-    List<Vehicle> vehicles;
+    private String name;
+
+//    @OneToMany(mappedBy = "owner")
+//    List<Vehicle> vehicles;
 
 
 }
