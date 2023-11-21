@@ -46,11 +46,10 @@ public class ConsignmentLotApplication {
 		System.out.println(v2.getId());
 		System.out.println(v2.getMake());
 
-		//List<Vehicle> vehicles = vehicleService.findAllVehicles();
-		//for(Vehicle vehicle: vehicles) {
-		//	System.out.println(vehicle.getMake());
-		//}
-
+		List<Vehicle> vehicles = vehicleService.findAllVehicles();
+		for(Vehicle vehicle: vehicles) {
+			System.out.println(vehicle.getMake());
+			System.out.println(vehicle.getOwner().getName());
+		}
 	}
-
 }
