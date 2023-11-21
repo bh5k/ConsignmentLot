@@ -23,8 +23,14 @@ public class Owner {
 
     private String name;
 
-//    @OneToMany(mappedBy = "owner")
-//    List<Vehicle> vehicles;
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+//    @OneToMany(mappedBy = "owner")
+//    private List<Vehicle> vehicles;
 
 }
